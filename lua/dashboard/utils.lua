@@ -102,17 +102,7 @@ end
 
 --- return the most recently files list
 function utils.get_mru_list()
-  local mru = {}
-  for _, file in pairs(vim.v.oldfiles or {}) do
-    if file and vim.fn.filereadable(file) == 1 and not vim.endswith(file, 'COMMIT_EDITMSG') then
-      --- issue: https://github.com/nvimdev/dashboard-nvim/issues/338
-      local f = vim.fs.normalize(file, {})
-      if not vim.tbl_contains(mru, f, {}) then
-        table.insert(mru, f)
-      end
-    end
-  end
-  return mru
+    return require('mru').get()
 end
 
 function utils.get_package_manager_stats()
