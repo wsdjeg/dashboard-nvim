@@ -295,7 +295,7 @@ local function map_key(config, key, content)
 
     if scol ~= nil then -- scol == nil if pressing enter in empty space
       if text:sub(scol, scol + 1) ~= '~/' then -- is relative path
-        scol = math.min(text:find('%w'), text:find('%p'))
+        scol = math.min(text:find('%w'), text:find('%p') or text:find('%w'))
       end
       text = text:sub(scol)
       path = text:sub(1, text:find('%w(%s+)$'))
