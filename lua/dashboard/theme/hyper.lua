@@ -317,15 +317,17 @@ local function map_key(config, key, content)
         end
       end
     else
-      vim.cmd('edit ' .. vim.fn.fnameescape(path))
-      local root = utils.get_vcs_root()
-      if not config.change_to_vcs_root then
-        return
-      end
-      if #root > 0 then
-        vim.cmd('lcd ' .. vim.fn.fnamemodify(root[#root], ':h'))
-      else
-        vim.cmd('lcd ' .. vim.fn.fnamemodify(path, ':h'))
+      if vim.fn.filereadable(path) == 1 then
+        vim.cmd('edit ' .. vim.fn.fnameescape(path))
+        if not config.change_to_vcs_root then
+          return
+        end
+        local root = utils.get_vcs_root()
+        if #root > 0 then
+          vim.cmd('lcd ' .. vim.fn.fnamemodify(root[#root], ':h'))
+        else
+          vim.cmd('lcd ' .. vim.fn.fnamemodify(path, ':h'))
+        end
       end
     end
   end, { buffer = config.bufnr, silent = true, nowait = true })
