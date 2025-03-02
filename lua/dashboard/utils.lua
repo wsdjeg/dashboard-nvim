@@ -102,7 +102,7 @@ end
 
 --- return the most recently files list
 function utils.get_mru_list()
-    return require('mru').get()
+  return require('mru').get()
 end
 
 function utils.get_package_manager_stats()
@@ -119,6 +119,23 @@ function utils.get_package_manager_stats()
     package_manager_stats.loaded = lazy.stats().loaded
     package_manager_stats.count = lazy.stats().count
     package_manager_stats.time = lazy.stats().startuptime
+  end
+  local ok, plug = pcall(require, 'plug')
+  if ok then
+    package_manager_stats.name = 'nvim-plug'
+    local function stats()
+      local loaded = 0
+      local count = 0
+      local time = 0
+      for k, v in pairs(plug.get()) do
+        if v.loaded then
+          loaded = loaded + 1
+        end
+        count = count + 1
+      end
+      return loaded, count, time
+    end
+    package_manager_stats.loaded, package_manager_stats.count, package_manager_stats.time = stats()
   end
   return package_manager_stats
 end
