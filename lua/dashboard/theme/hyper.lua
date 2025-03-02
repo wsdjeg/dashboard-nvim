@@ -89,6 +89,15 @@ local function load_packages(config)
         .. package_manager_stats.count
         .. ' installed',
     }
+  elseif package_manager_stats.name == 'nvim-plug' then
+    lines = {
+      '',
+      'Plugins: '
+        .. package_manager_stats.loaded
+        .. ' loaded / '
+        .. package_manager_stats.count
+        .. ' installed',
+    }
   else
     lines = {
       '',
