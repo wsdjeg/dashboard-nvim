@@ -92,6 +92,7 @@ local function load_packages(config)
   elseif package_manager_stats.name == 'nvim-plug' then
     lines = {
       '',
+      'Startuptime: ' .. package_manager_stats.time .. ' ms',
       'Plugins: '
         .. package_manager_stats.loaded
         .. ' loaded / '
