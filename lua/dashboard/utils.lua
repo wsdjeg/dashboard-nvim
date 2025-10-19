@@ -130,7 +130,7 @@ function utils.get_package_manager_stats()
       for k, v in pairs(plug.get()) do
         if v.loaded then
           loaded = loaded + 1
-          time = time + plug.load_time
+          time = time + v.load_time
         end
         count = count + 1
       end
