@@ -2,15 +2,12 @@
   Fancy and Blazing Fast start screen plugin of neovim
 </h1>
 
-| <center>Hyper</center> | <center>Doom</center> |
-| ---   | ---   |
-| <center><img src="https://user-images.githubusercontent.com/41671631/215015845-b13343c4-427e-45d6-9f92-267ab909eff1.png" width=80% height=80%/></center>|<center> <img src="https://user-images.githubusercontent.com/41671631/214518543-d7d6afbf-f405-4a6f-a505-568c5a101e92.png" width=80% height=80%/> </center>|
+This is fork of `nvimdev/dashboard-nvim`
 
 # Feature
 
 - Low memory usage. dashboard does not store the all user configs in memory like header etc these string will take some memory. now it will be clean after you open a file. you can still use dashboard command to open a new one , then dashboard will read the config from cache.
 - Blazing fast
-
 
 # Install
 
@@ -18,7 +15,7 @@
 
 ```lua
 {
-  'nvimdev/dashboard-nvim',
+  'wsdjeg/dashboard-nvim',
   event = 'VimEnter',
   config = function()
     require('dashboard').setup {
@@ -33,7 +30,7 @@
 
 ```lua
 use {
-  'nvimdev/dashboard-nvim',
+  'wsdjeg/dashboard-nvim',
   event = 'VimEnter',
   config = function()
     require('dashboard').setup {
@@ -191,6 +188,7 @@ example config of screenshot
     },
   })
 ```
+
 </details>
 
 <details>
@@ -226,6 +224,7 @@ db.setup({
   }
 })
 ```
+
 </details
 
 ### Changed
@@ -246,7 +245,6 @@ db.setup({
 # Donate
 
 If you'd like to support my work financially, buy me a drink through Github Sponsor or [![](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/bobbyhub)
-
 
 # LICENSE
 
