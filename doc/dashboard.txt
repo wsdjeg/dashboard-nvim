@@ -12,10 +12,8 @@ Table of Contents                                *dashboard-table-of-contents*
 5. Donate                                                   |dashboard-donate|
 6. LICENSE                                                 |dashboard-license|
 7. Links                                                     |dashboard-links|
-Fancy and Blazing Fast start screen plugin of neovim  ----------------------------------- -----------------------------------
-                                      
+Fancy and Blazing Fast start screen plugin of neovimThis is fork of `nvimdev/dashboard-nvim`
 
-  ----------------------------------- -----------------------------------
 
 ==============================================================================
 1. Feature                                                 *dashboard-feature*
@@ -31,7 +29,7 @@ Fancy and Blazing Fast start screen plugin of neovim  --------------------------
 
 >lua
     {
-      'nvimdev/dashboard-nvim',
+      'wsdjeg/dashboard-nvim',
       event = 'VimEnter',
       config = function()
         require('dashboard').setup {
@@ -46,7 +44,7 @@ Fancy and Blazing Fast start screen plugin of neovim  --------------------------
 
 >lua
     use {
-      'nvimdev/dashboard-nvim',
+      'wsdjeg/dashboard-nvim',
       event = 'VimEnter',
       config = function()
         require('dashboard').setup {
