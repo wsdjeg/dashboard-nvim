@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/wsdjeg/dashboard-nvim/compare/v1.0.1...v1.0.2) (2025-12-03)
+
+
+### Bug Fixes
+
+* update release-please-action ([89dd4c5](https://github.com/wsdjeg/dashboard-nvim/commit/89dd4c5750fcb17b5106c6b020e6aa348188dbcd))
+
 ## [1.0.1](https://github.com/wsdjeg/dashboard-nvim/compare/v1.0.0...v1.0.1) (2025-11-24)
 
 
