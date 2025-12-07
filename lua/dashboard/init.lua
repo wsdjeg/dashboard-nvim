@@ -267,10 +267,10 @@ function db:instance()
     return
   end
 
-  if not utils.buf_is_empty(0) then
-    self.bufnr = api.nvim_create_buf(false, true)
-  else
+  if utils.buf_is_empty(0) and vim.bo.filetype == '' and api.nvim_buf_get_name(0) == '' then
     self.bufnr = api.nvim_get_current_buf()
+  else
+    self.bufnr = api.nvim_create_buf(false, true)
   end
 
   self.winid = api.nvim_get_current_win()
