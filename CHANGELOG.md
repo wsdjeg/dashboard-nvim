@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/wsdjeg/dashboard-nvim/compare/v1.0.1...v1.1.0) (2025-12-18)
+
+
+### Features
+
+* support `:Dashboard!` ([1bcc7e6](https://github.com/wsdjeg/dashboard-nvim/commit/1bcc7e679745c1dc882884217148b249737984bb))
+
+
+### Bug Fixes
+
+* do not run panvimdoc in pr ([1eca646](https://github.com/wsdjeg/dashboard-nvim/commit/1eca64688aa03fe5b31ea44b82faccbc2530f6e4))
+* skip normal buffer ([3a0d9f6](https://github.com/wsdjeg/dashboard-nvim/commit/3a0d9f6eb78d991c20794eef102ab7722824eaa9))
+* update release-please-action ([89dd4c5](https://github.com/wsdjeg/dashboard-nvim/commit/89dd4c5750fcb17b5106c6b020e6aa348188dbcd))
+
 ## [1.0.1](https://github.com/wsdjeg/dashboard-nvim/compare/v1.0.0...v1.0.1) (2025-11-24)
 
 
