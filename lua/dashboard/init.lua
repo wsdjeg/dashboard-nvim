@@ -255,9 +255,9 @@ function db:load_theme(opts)
 end
 
 -- create dashboard instance
-function db:instance()
+function db:instance(bang)
   local mode = api.nvim_get_mode().mode
-  if mode == 'i' or not vim.bo.modifiable then
+  if mode == 'i' or (not vim.bo.modifiable and not bang) then
     return
   end
 
@@ -267,10 +267,19 @@ function db:instance()
     return
   end
 
-  if utils.buf_is_empty(0) and vim.bo.filetype == '' and api.nvim_buf_get_name(0) == '' then
+  if
+    utils.buf_is_empty(0)
+    and vim.bo.filetype == ''
+    and api.nvim_buf_get_name(0) == ''
+    and not bang
+  then
     self.bufnr = api.nvim_get_current_buf()
   else
     self.bufnr = api.nvim_create_buf(false, true)
+  end
+
+  if bang then
+    vim.cmd.only()
   end
 
   self.winid = api.nvim_get_current_win()
